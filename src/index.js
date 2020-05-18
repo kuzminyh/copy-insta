@@ -1,11 +1,15 @@
-import Application from './Application'
+console.log("strat")
+import Application from "./Application";
+import Header from "./components/Header";
+import Container from "./components/Container"
+import Post from "./components/Post"
 const app = new Application({
-    el: document.querySelector('#app') //точка монтирования приложения
-})
-app.router.add('/' , null)
-app.router.add('/edit' , null)
+    el: document.querySelector("#app")
+  }); // создаем приложение
+const header = new Header()
+const container = new Container()
+container.add(new Post)
 
-//После установления роутеров обновляем приложение целиком
-app.update()
-
-console.log(app)
+  app.router.add("/", [header, container]);
+  console.log('header' , [header]);
+  app.update()

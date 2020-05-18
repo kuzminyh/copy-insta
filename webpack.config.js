@@ -14,7 +14,11 @@ module.exports = {
 			test: /\.js$/,
 			loader: 'babel-loader',
 			exclude: '/node_modules/'
-		}]
+		},
+		{
+			test: /\.html$/i,
+			loader: 'html-loader',
+		  },]
 	},
 	devServer: {
 		overlay: true
