@@ -1,6 +1,5 @@
 import Component from '../Component';
 import htmlTemplate from './index.html';
-import Comment from '../Comment';
 
 export default class Post extends Component{
     constructor(originalArgs={}){

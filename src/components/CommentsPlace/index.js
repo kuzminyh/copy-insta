@@ -1,9 +1,9 @@
 import Component from '../Component';
 import htmlTemplate from './index.html';
 
-export default class Container extends Component{
+export default class CommentPlace extends Component{
     constructor(){
-        super('container');
+        super('commentPlace');
         this.components = [];
     }
 

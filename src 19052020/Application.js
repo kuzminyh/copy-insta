@@ -10,6 +10,6 @@ export default class Application{
     update(){ // обновляет все приложение
         this.router.update(); // обновили
         this.root.innerHTML = ''; // очистили
-        this.root.append(this.router.page); // добавили новую страницу
+        this.root.append(this.router.page.fragment); // добавили новую страницу
     }
 }

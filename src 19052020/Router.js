@@ -17,7 +17,7 @@ export default class Router{
 
         for (const route of this.routes){ // ищем нужный роут
             if (route.path.match(location.path)){ // если путь совпадает
-                console.log(route);
+                console.log('route', route);
                 this.route = route;
                 this.page = new Page(route.container) // Page - внешний вид нашей страницы
                 
