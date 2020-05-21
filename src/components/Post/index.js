@@ -1,6 +1,6 @@
 import Component from '../Component';
 import htmlTemplate from './index.html';
-import Comment from '../Comment';
+import CommentsPlace from '../CommentsPlace';
 
 export default class Post extends Component{
     constructor(originalArgs={}){
@@ -30,12 +30,13 @@ export default class Post extends Component{
            image: args.content.image,
            tags: args.content.tags.slice()
           }
-
-          this.comments = args.comments.map(x=>({
+           
+          this.commentsPlace = new CommentsPlace(args.comments)
+         /* this.comments = args.comments.map(x=>({
             name: x.user.name,
             family: x.user.family,
             image: x.user.image
-          }))
+          }))*/
 
         }
     
@@ -51,4 +52,17 @@ export default class Post extends Component{
               .replace(/{%content.description%}/g, this.content.description)
               .replace(/{%content.tags%}/g, this.content.tags.join(" "));
           }
+          
+          render() {
+              const element = super.render()
+              console.log('this.commentsPlace.comments', this.commentsPlace.comments)
+             // element.append(...this.commentsPlace.comments.map(x=>x.render())); // добавляем components(посты) в элемент
+              return element;
+          }
 }
+
+// иммутабельность - неизменяемым (англ. immutable) называется объект, состояние которого не может быть изменено после создания.
+// Результатом любой модификации такого объекта всегда будет новый объект, при этом старый объект не изменится
+
+// мы не создаем доп ссылок на объекты, пришебшие извне, вместо этого мы создаем свои объекты и клонируем в них все данные
+// это делается для того, чтобы изменения были независимы друг от друга

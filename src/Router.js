@@ -12,7 +12,7 @@ export default class Router{
         })
     }
 
-    update(){ // обновляет все приложение
+    update(){ // обновляет все приложение целиком
         //console.log('location',location); // location - объект, кот хранит служебную ин-фу об адресной строке
 
         for (const route of this.routes){ // ищем нужный роут

@@ -8,7 +8,7 @@ export default class Application{
     }
 
     update(){ // обновляет все приложение
-        this.router.update(); // обновили
+        this.router.update(); // обновили - получили страничку и добавили в ROOT
         this.root.innerHTML = ''; // очистили
         this.root.append(this.router.page.fragment); // добавили новую страницу
     }
