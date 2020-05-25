@@ -14,7 +14,11 @@ export default class CommentPlace extends Component{
 
     render(){
         const element = super.render(); //вызов родительского метода render из super класса
-        element.append(...this.comments.map(x=>x.render())); // добавляем components(посты) в элемент
+        console.log('elementCommentsPlace',element)
+        element.append(...this.comments.map(function(x){           //x=>x.render())); // добавляем components(посты) в элемент
+                     console.log('xCommentsPlace',x)
+                     x.render()
+        }    ))                         
         return element;
     }
     

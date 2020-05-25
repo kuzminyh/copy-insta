@@ -33,5 +33,9 @@ export default class Comment extends Component{
           .replace(/{%comment.image%}/g, this.user.image)
           .replace(/{%comment.content%}/g, this.content);
       }
-     
+     render() {
+      console.log('render function')   
     }
+    }
+
+    

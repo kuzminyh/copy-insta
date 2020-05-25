@@ -55,8 +55,11 @@ export default class Post extends Component{
           
           render() {
               const element = super.render()
-              console.log('this.commentsPlace.comments', this.commentsPlace.comments)
-             // element.append(...this.commentsPlace.comments.map(x=>x.render())); // добавляем components(посты) в элемент
+              console.log('elementCommentsPlace', element)
+              element.append(...this.commentsPlace.comments.map(function(x){   //x=>x.render())); // добавляем components(посты) в элемент
+               // x.render()
+                 console.log('xcommentsPlace1', x)
+              }))                                
               return element;
           }
 }

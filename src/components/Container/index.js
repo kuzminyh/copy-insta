@@ -13,7 +13,10 @@ export default class Container extends Component{
 
     render(){
         const element = super.render(); //вызов родительского метода render из super класса
-        element.append(...this.components.map(x=>x.render())); // добавляем components(посты) в элемент
+        element.append(...this.components.map(function(x1){ //x=>x.render())); // добавляем components(посты) в элемен
+            console.log('x1', x1)
+            return x1.render()
+        } ))                                             
         return element;
     }
     

@@ -9,7 +9,7 @@ export default class Hader extends Component{
     }
     
     getHtmlTemplate(){ // переопределяем ф-ю // должна возвращаться строка с html кодом хедера
-        console.log('htmlTemplate',htmlTemplate)
+       // console.log('htmlTemplate',htmlTemplate)
         return htmlTemplate; // или можно было прописать require прям тут 
     }
 }
