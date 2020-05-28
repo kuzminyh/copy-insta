@@ -12,12 +12,12 @@ const app = new Application({
 const header = new Header()
 
 const container = new Container()
- console.log('header',header)
+
 //container.add(new Post)
        for (const post of store.posts){
          container.add(new Post(post))
        }
   console.log('container',container)
   app.router.add("/", [header, container]);
-  console.log('app' , app);
+  console.log('app.router' , app.router);
   app.update()

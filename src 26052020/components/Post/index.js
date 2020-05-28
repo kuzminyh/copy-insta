@@ -33,20 +33,17 @@ export default class Post extends Component{
            
           this.commentsPlace = new CommentsPlace(args.comments)
           console.log('this.commentsPlaceFromPost',this.commentsPlace)
-
-          this.comments = args.comments.map(x=>({
+         /* this.comments = args.comments.map(x=>({
             name: x.user.name,
             family: x.user.family,
             image: x.user.image
-          }))
+          }))*/
 
         }
     
     
      
-        getHtmlTemplate() {// переопределяем ф-ю // должна возвращаться строка с html кодом  
-          //const  htmlTemp  = 
-              console.log(' this.comments', this.comments[0].name)  
+        getHtmlTemplate() {// переопределяем ф-ю // должна возвращаться строка с html кодом    
             return htmlTemplate // или можно было прописать require прям тут
               .replace(/{%user.name%}/g, this.user.name) // заменяем шаблоны // флаг g замена всех вхождений
               .replace(/{%user.family%}/g, this.user.family)
@@ -54,20 +51,15 @@ export default class Post extends Component{
         
               .replace(/{%content.image%}/g, this.content.image)
               .replace(/{%content.description%}/g, this.content.description)
-              .replace(/{%content.tags%}/g, this.content.tags.join(" "))
-              .replace(/{%comments.image%}/g, this.comments[0].image)
-              .replace(/{%comments.name%}/g, this.comments[0].name)
-              .replace(/{%comments.family%}/g, this.comments[0].family)
+              .replace(/{%content.tags%}/g, this.content.tags.join(" "));
           }
           
           render() {
               const element = super.render()
-              console.log('elementCommentsPlace2', element)
-              console.log('this.commentsPlace.comments',this.commentsPlace.comments )
+              console.log('elementCommentsPlace', element)
               element.append(...this.commentsPlace.comments.map(function(x){   //x=>x.render())); // добавляем components(посты) в элемент
-               // x. getHtmlTemplate()
                // x.render()
-                 console.log('xcommentsPlace11', x)
+                 console.log('xcommentsPlace1', x)
               }))                                
               return element;
           }

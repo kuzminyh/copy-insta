@@ -10,7 +10,6 @@ export default class Router{
         this.routes.push({
             path, container
         })
-        console.log('this.routes', this.routes);
     }
 
     update(){ // обновляет все приложение целиком
@@ -18,7 +17,7 @@ export default class Router{
 
         for (const route of this.routes){ // ищем нужный роут
             if (route.path.match(location.path)){ // если путь совпадает
-                console.log('route', route.container);
+                console.log('route', route);
                 this.route = route;
                 this.page = new Page(route.container) // Page - внешний вид нашей страницы
                 

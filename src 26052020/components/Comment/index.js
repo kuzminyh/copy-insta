@@ -26,10 +26,10 @@ export default class Comment extends Component{
       }
     
       getHtmlTemplate() {
-        console.log('htmlTemplate',htmlTemplate);
+        console.log(htmlTemplate);
         return htmlTemplate
           .replace(/{%comment.name%}/g, this.user.name) // заменяем шаблоны // флаг g замена всех вхождений
-          .replace(/{%comment.family%}/g, this.user.family)
+          .replace(/{%comment.surname%}/g, this.user.surname)
           .replace(/{%comment.image%}/g, this.user.image)
           .replace(/{%comment.content%}/g, this.content);
       }

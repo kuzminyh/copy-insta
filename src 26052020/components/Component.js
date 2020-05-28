@@ -7,7 +7,6 @@ export default class Component{ // отвечает за состояние ко
     render(){ //превращаем строку в DOM структуру
         const divElement = document.createElement('div');
        // divElement.innerHTML = this.htmlTemplate; // абстрактное поле // это связано с абстр. фабрикой
-       console.log('thisFromComponent', this)
          divElement.innerHTML = this.getHtmlTemplate(); // абстрактный метод // будет реализован в дочерних элементах
         return divElement.firstElementChild;
     }
